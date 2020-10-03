@@ -1,0 +1,35 @@
+<h1> Welcome to book Management! </h1>
+ <p>Display All Books   <a href="#">Add Books</a></p>
+  <div>
+    <div class="text-center">
+        <!--<input type="text" name="filter" id="filter" placeholder="search by name" >
+        [(ngModel)]="filterBy" (input)="onFilterInput()"/>-->
+    </div>
+    <br /><br />
+    
+    <div>
+        <table id="book-list"> <!-- creating table -->
+            <tr>
+              <th>BOOK ID</th>
+                <th>BOOK NAME</th>
+                <th>BOOK COST</th>
+                <th>AUHTOR</th>
+                <th>DELETE BOOK</th>
+                <th>EDIT BOOK</th>
+            </tr>
+            
+            <tr *ngFor="let book of bookDetails;index as i">
+              <td>{{book.bookId}}</td>
+                <td class="book-name">{{book.bookName}}</td>
+                <td>{{book.bookCost}}</td>
+                <td>{{book.author}}</td>
+                <!--  Delete user -->
+                <td><button id="{{'remove'+i}}" (click)="onRemoveClicked(i)">Remove</button></td>
+                <!-- edit user -->
+                
+                  
+            </tr>
+        </table>
+    </div>
+    
+</div>
